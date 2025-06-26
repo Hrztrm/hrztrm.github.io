@@ -475,11 +475,11 @@ document.addEventListener("DOMContentLoaded", () => {
         div.classList.add("oneko-variant-button-selected");
       }
 
-      tippy(div, {
-        content: variantEnum[1],
-        theme: 'light-border', // Optional: Pick a Tippy theme
-        placement: 'top',      // Optional: top, bottom, left, right
-        });
+      // tippy(div, {
+      //   content: variantEnum[1],
+      //   theme: 'light-border', // Optional: Pick a Tippy theme
+      //   placement: 'top',      // Optional: top, bottom, left, right
+      //   });
 
       return div;
     }
