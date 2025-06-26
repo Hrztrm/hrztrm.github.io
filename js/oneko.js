@@ -475,12 +475,6 @@ document.addEventListener("DOMContentLoaded", () => {
         div.classList.add("oneko-variant-button-selected");
       }
 
-      // tippy(div, {
-      //   content: variantEnum[1],
-      //   theme: 'light-border', // Optional: Pick a Tippy theme
-      //   placement: 'top',      // Optional: top, bottom, left, right
-      //   });
-
       return div;
     }
 
@@ -490,20 +484,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     return container;
   }
-
-//   (async () => {
-//     while (!Spicetify.Mousetrap) {
-//       await new Promise((r) => setTimeout(r, 100));
-//     }
-//     Spicetify.Mousetrap.bind("o n e k o", () => {
-//       Spicetify.PopupModal.display({
-//         title: "Choose your neko",
-//         // Render the modal new every time it is opened
-//         content: pickerModal(),
-//       });
-//     });
-//   })();
-
 
 Mousetrap.bind("o n e k o", () => {
     console.log("🐾 'oneko' shortcut triggered!");
