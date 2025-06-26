@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
     nekoEl.style.height = "32px";
     nekoEl.style.position = "fixed";
     // nekoEl.style.pointerEvents = "none";
-    nekoEl.style.backgroundImage = `url('../assets/oneko/oneko-${variant}.gif')`;
+    nekoEl.style.backgroundImage = `url('assets/oneko/oneko-${variant}.gif')`;
     nekoEl.style.imageRendering = "pixelated";
     nekoEl.style.left = `${nekoPosX - 16}px`;
     nekoEl.style.top = `${nekoPosY - 16}px`;
@@ -414,7 +414,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     variant = arr[0];
     localStorage.setItem("oneko:variant", `"${variant}"`);
-    nekoEl.style.backgroundImage = `url('../assets/oneko/oneko-${variant}.gif')`;
+    nekoEl.style.backgroundImage = `url('assets/oneko/oneko-${variant}.gif')`;
   }
 
   // Popup modal to choose variant
@@ -458,7 +458,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       div.className = "oneko-variant-button";
       div.id = variantEnum[0];
-      div.style.backgroundImage = `url('../assets/oneko/oneko-${variantEnum[0]}.gif')`;
+      div.style.backgroundImage = `url('assets/oneko/oneko-${variantEnum[0]}.gif')`;
       div.style.setProperty("--idle-x", `${idle[0] * 64}px`);
       div.style.setProperty("--idle-y", `${idle[1] * 64}px`);
       div.style.setProperty("--active-x", `${active[0] * 64}px`);
