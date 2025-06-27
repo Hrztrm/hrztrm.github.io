@@ -32,7 +32,7 @@
 			<div id="nav-minimize" class="btn"><span class="fa fa-window-minimize"></span></div>
 		</div>
 		{% include topbar.html %}
-		<div class="tag_list">
+		<div id="tag_list-box" class="tag_list">
 			<ul id="tag-list">
 				<li><a href="/" ><img src="/assets/img/disk.png" />(C:)</a>
 			<ul>
@@ -44,7 +44,7 @@
 				</li>
 			</ul>
 		</div>
-		<div class="post_list">
+		<div id="post_list-box" class="post_list">
 			{% unless page.date%}
 				{% if page.title == 'me' or page.title == '404...' %}
 					<ul>
@@ -63,7 +63,7 @@
 				</ul>
 			{% endunless %}
 		</div>
-		<div class="post_total">
+		<div id="post_total-box" class="post_total">
 			{% if page.tag %}
 				<div class="left">{{ site.tags[page.tag] | size }} object(s)</div>
 			{% else %}
