@@ -18,15 +18,11 @@ document.body.addEventListener('click', function (event) {
     }
 });
 
+// By: Me (Custom)
+var max = document.getElementById("nav-maximize");
+var min = document.getElementById("nav-minimize");
 
-// By: h01000110 (hi)
-// github.com/h01000110
-// Oringally from 001.js
-
-var max = document.getElementsByClassName("btn")[1];
-var min = document.getElementsByClassName("btn")[2];
-
-function maximize () {
+function nav_maximize () {
 	var post = document.getElementsByClassName("content")[0];
 	var cont = document.getElementsByClassName("post_content")[0];
 	var wid = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName("body")[0].clientWidth;
@@ -43,19 +39,58 @@ function maximize () {
 	}
 }
 
-function minimize () {
+function nav_minimize () {
 	var post = document.getElementsByClassName("content")[0];
 	var cont = document.getElementsByClassName("post_content")[0];
 	var wid = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName("body")[0].clientWidth;
 
 	if ( wid > 900 ) {
-		post.style.width = "800px";
+		post.style.width = "70%";
 		cont.style.width = "98.5%";
 	}
 }
 
-max.addEventListener('click', maximize, false);
-min.addEventListener('click', minimize, false);
+max.addEventListener('click', nav_maximize, false);
+min.addEventListener('click', nav_minimize, false);
+
+
+// By: h01000110 (hi)
+// github.com/h01000110
+// Oringally from 001.js
+
+var max = document.getElementById("post-maximize");
+var min = document.getElementById("post-minimize");
+
+function post_maximize () {
+	var post = document.getElementsByClassName("content")[0];
+	var cont = document.getElementsByClassName("post_content")[0];
+	var wid = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName("body")[0].clientWidth;
+
+	if (wid > 900) {
+		widf = wid * 0.9;
+		post.style.width = widf + "px";
+
+		if (wid < 1400) {
+			cont.style.width = "99%";
+		} else {
+			cont.style.width = "99.4%";
+		}
+	}
+}
+
+function post_minimize () {
+	var post = document.getElementsByClassName("content")[0];
+	var cont = document.getElementsByClassName("post_content")[0];
+	var wid = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName("body")[0].clientWidth;
+
+	if ( wid > 900 ) {
+		post.style.width = "70%";
+		cont.style.width = "98.5%";
+	}
+}
+
+max.addEventListener('click', post_maximize, false);
+min.addEventListener('click', post_minimize, false);
 
 // By: h01000110 (hi)
 // github.com/h01000110
