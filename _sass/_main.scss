@@ -15,6 +15,10 @@ body {
 }
 
 .popup{
+	display:none;
+    position:fixed; 
+    top:20%; 
+    left:50%;
 	width: 800px;
 	margin: auto;
 	margin-top: 20px;
