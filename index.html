@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0; url=pages/index.html" />
-  </head>
-  <body>
-    <p>Redirecting to the site... <a href="pages/index.html">Click here if not redirected</a>.</p>
-  </body>
-</html>
+---
+layout: default
+---
+<ul>
+	{% for post in site.posts %}
+	<li><a href="{{  post.url }}" title="{{ post.title }}"><img src="/assets/img/file.ico" title="{{ post.title }}" />{{ post.title }}</a></li>
+	{% endfor %}
+</ul>
