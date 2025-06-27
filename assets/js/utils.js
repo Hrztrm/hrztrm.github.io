@@ -1,10 +1,16 @@
 
 // Function to remove Oneko if set
 function removeOneko() {
-  document.getElementById('oneko').remove();
+    document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById('oneko').remove();
+        return;
+    });
+    document.getElementById('oneko').remove();
+    return;
+
 }
 
-function checkLocalDisableOneko(fallback) {
+function checkLocalDisableOneko() {
     try {
         console.log("Chekcing for disabled oneko");
         const value = JSON.parse(localStorage.getItem(`oneko:disable`));
@@ -14,7 +20,6 @@ function checkLocalDisableOneko(fallback) {
             }
     } catch (e) {
         console.error(e);
-        return fallback;
     }
 }
 
