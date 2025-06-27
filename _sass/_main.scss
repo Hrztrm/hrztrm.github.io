@@ -19,6 +19,7 @@ body {
     position:fixed; 
     top:20%; 
     left:50%;
+	transform: translateX(-50%); /* center horizontally */
 	width: 800px;
 	margin: auto;
 	margin-top: 20px;
@@ -27,6 +28,15 @@ body {
 	border-color: #fff8ff #000000 #000000 #fff8ff;
 	padding: 2px 0;
 	z-index:1000;
+}
+
+.popup_content{
+	background: #fff8ff;
+	border-width: 2px;
+	border-style: ridge groove groove ridge;
+	border-color: #7f787f #fff8ff #fff8ff #7f787f;
+	padding: 2px;
+	margin: 0 auto;
 }
 
 .default_title, .post_title {
