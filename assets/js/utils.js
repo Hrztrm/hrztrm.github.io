@@ -14,10 +14,10 @@ function checkLocalDisableOneko() {
     try {
         console.log("Chekcing for disabled oneko");
         const value = JSON.parse(localStorage.getItem(`oneko:disable`));
-            if (value != "" || value != null){
-                console.log("Oneko set is disabled!");
-                removeOneko()
-            }
+        if (value === "true"){
+            console.log("Oneko set is disabled!");
+            removeOneko()
+        }
     } catch (e) {
         console.error(e);
     }
