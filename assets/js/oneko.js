@@ -1,5 +1,6 @@
 // oneko.js: https://github.com/adryd325/oneko.js
 // Taken and changed from https://github.com/kyrie25/spicetify-oneko/tree/main
+console.log("Oneko is loaded!");
 document.addEventListener("DOMContentLoaded", () => {
   // wait until Mousetrap is ready
   if (typeof Mousetrap === "undefined") {
