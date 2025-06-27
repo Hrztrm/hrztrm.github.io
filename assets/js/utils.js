@@ -15,3 +15,5 @@ function checkLocalDisableOneko(fallback) {
   return fallback;
   }
 }
+
+window.onload = checkLocalDisableOneko();
