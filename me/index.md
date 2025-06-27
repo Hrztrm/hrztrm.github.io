@@ -1,9 +1,9 @@
 ---
 layout: me
-title: me
+title: Me
 ---
 
-# Hello There!
+## Hello There!
 Well, what did you expect? Welcome to the blog.
 
 Things to note:
