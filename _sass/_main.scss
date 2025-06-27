@@ -204,9 +204,12 @@ ul.topbar {
     padding:0 0 0 20px;
 }
 .post_total {
+	display: flex;
+	justify-content: space-between;
+	gap: 4px; /* optional spacing between .left and .right */
 	width: 100%;
 	box-sizing: border-box;
-	
+
 	.left, .right {
 		border: 1px solid;
 		border-color: #888888 #dadada #dadada #888888;
