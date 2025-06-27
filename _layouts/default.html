@@ -21,7 +21,7 @@
 </head>
 <body>
 	<div id="nav-box" class="wrapper">
-		<div class="default_title">
+		<div id="nav-bar" class="default_title">
 			<img src="/assets/img/mycomputer.png" />
 			{% if page.tag %}
 				<h1>{{ page.tag }}</h1>
@@ -72,7 +72,7 @@
 	</div>
 	{% if page.title %}
         <div id="post-box" class="content">
-			<div class="post_title">
+			<div id="post-bar" class="post_title">
 				<img src="/assets/img/file.png" />
 				<h1>{{  page.title  }}</h1>
 				<a href="/"><div class="btn"><span class="fa fa-times"></span></div></a>
@@ -97,7 +97,7 @@
 	<script src="/assets/js/window_mgmt.js"></script>
 
 	<div id="neko-popup"class="popup">
-		<div class="post_title">
+		<div id="popup-bar" class="post_title">
 			<h1>Oneko.js</h1>
 			<a><div onclick="closeModal()" class="btn"><span class="fa fa-times"></span></div></a>
 		</div>
