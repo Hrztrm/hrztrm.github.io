@@ -520,3 +520,4 @@ function showPickerModal() {
 function closeModal() {
   document.getElementById('neko-popup').style.display = 'none';
 }
+
