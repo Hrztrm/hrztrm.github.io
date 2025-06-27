@@ -502,6 +502,9 @@ function showPickerModal() {
 
   // Show the modal
   modal.style.display = 'block';
+  document.getElementById('nav-bar').style.background = '#808080';
+  document.getElementById('post-bar').style.background = '#808080';
+  document.getElementById('popup-bar').style.background = '#00007f';
 }
 
   if (parseLocalStorage("forceSleep", false)) {
