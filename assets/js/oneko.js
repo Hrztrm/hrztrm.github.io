@@ -493,7 +493,7 @@ Mousetrap.bind("o n e k o", () => {
 });
 
 function showPickerModal() {
-  const modal = document.getElementsByClassName('popup');
+  const modal = document.getElementsByClassName('popup')[0];
   const content = document.getElementById('modal-content');
 
   // Clear previous content and add the new picker content
