@@ -1,6 +1,6 @@
 permalink: /:year:month:day/:title
-url: hrztrm.github.io
-baseurl: /
+url: 
+baseurl: 
 
 # variables
 name: Whatchamacallits
