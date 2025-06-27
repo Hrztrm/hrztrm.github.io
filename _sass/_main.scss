@@ -206,7 +206,7 @@ ul.topbar {
 .post_total {
 	display: flex;
 	justify-content: space-between;
-	gap: 4px; /* optional spacing between .left and .right */
+	gap: 0.3%;
 	width: 100%;
 	box-sizing: border-box;
 
@@ -216,11 +216,11 @@ ul.topbar {
 		padding: 1px 3px;
 	}
 	.left {
-		flex: 0 0 33%;
+		flex: 0 0 30%;
 		margin-left: 2px;
 	}
 	.right {
-		flex: 0 0 64%;
+		flex: 1;
 		margin-right: 2px;
 	}
 }
@@ -367,15 +367,6 @@ ul.topbar {
 	.wrapper {
 		width: 90%;
 	}
-	.post_total {
-		.left {
-			width: 37%;
-		}
-		.right {
-			float: right;
-			width: 60%;
-		}
-	}
 }
 @media only screen and (max-width: 750px) {
 	.tag_list {
@@ -385,15 +376,6 @@ ul.topbar {
 		width: 99%;
 		float: left;
 	}
-	.post_total {
-		.left {
-			width: 36%;
-		}
-		.right {
-			float: right;
-			width: 60%;
-		}
-	}
 }
 @media only screen and (max-width: 610px) {
 	.tag_list {
@@ -402,32 +384,6 @@ ul.topbar {
 	.post_list {
 		width: 98.7%;
 		float: left;
-	}
-	.post_total {
-		.left {
-			width: 35.7%;
-		}
-	}
-}
-@media only screen and (max-width: 520px) {
-	.post_total {
-		.left {
-			width: 34.5%;
-		}
-	}
-}
-@media only screen and (max-width: 410px) {
-	.post_total {
-		.left {
-			width: 34%;
-		}
-	}
-}
-@media only screen and (max-width: 375px) {
-	.post_total {
-		.left {
-			width: 33%;
-		}
 	}
 }
 ::-webkit-scrollbar {
