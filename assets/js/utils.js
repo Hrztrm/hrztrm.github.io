@@ -5,15 +5,17 @@ function removeOneko() {
 }
 
 function checkLocalDisableOneko(fallback) {
-  try {
-  const value = JSON.parse(localStorage.getItem(`oneko:disable`));
-  if (value != "" || value != null){
-    removeOneko()
-  }
-  } catch (e) {
-  console.error(e);
-  return fallback;
-  }
+    try {
+        console.log("Chekcing for disabled oneko");
+        const value = JSON.parse(localStorage.getItem(`oneko:disable`));
+            if (value != "" || value != null){
+                console.log("Oneko set is disabled!");
+                removeOneko()
+            }
+    } catch (e) {
+        console.error(e);
+        return fallback;
+    }
 }
 
 window.onload = checkLocalDisableOneko();
