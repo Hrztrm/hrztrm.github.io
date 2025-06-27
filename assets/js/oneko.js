@@ -493,7 +493,7 @@ Mousetrap.bind("o n e k o", () => {
 });
 
 function showPickerModal() {
-  const modal = document.getElementsById('neko-popup');
+  const modal = document.getElementById('neko-popup');
   const content = document.getElementById('modal-content');
 
   // Clear previous content and add the new picker content
@@ -515,5 +515,5 @@ function showPickerModal() {
 });
 
 function closeModal() {
-  document.getElementsById('neko-popup').style.display = 'none';
+  document.getElementById('neko-popup').style.display = 'none';
 }
