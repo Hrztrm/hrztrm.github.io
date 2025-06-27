@@ -493,7 +493,7 @@ Mousetrap.bind("o n e k o", () => {
 });
 
 function showPickerModal() {
-  const modal = document.getElementById('modal');
+  const modal = document.getElementsByClassName('popup');
   const content = document.getElementById('modal-content');
 
   // Clear previous content and add the new picker content
@@ -515,5 +515,5 @@ function showPickerModal() {
 });
 
 function closeModal() {
-  document.getElementById('modal').style.display = 'none';
+  document.getElementsByClassName('popup').style.display = 'none';
 }
