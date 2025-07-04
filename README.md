@@ -1,11 +1,35 @@
-# Windows 95 Theme for Jekyll
+# How to run this from your own server for testing without testing it directly on Github Pages
 
-![ss](https://github.com/h01000110/windows-95/raw/gh-pages/screenshot_2.png)
+## Install Prerequiesite
 
-Homepage: [Windows 95](https://h01000110.github.io/20170917/windows-95)
+```bash
+sudo apt-get install ruby-full build-essential zlib1g-dev
+echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
+echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+gem install jekyll bundler
+```
+[https://jekyllrb.com/docs/installation/ubuntu/](Link)
 
-Demo: [Click here](https://h01000110.github.io/windows-95/)
+## Import the current github pages you have
 
-Author: [h01000110 (hi)](https://github.com/h01000110)
+```bash
+jekyll new <GithubPage_Name>
+git clone <Github Page repo>
+cp -r /home/user/<Github Page repo> /home/user/<GithubPage_Name>
+cd <GithubPage_Name>
+vim .gitignore
+```
 
-License: [MIT](https://github.com/h01000110/windows-95/blob/master/LICENSE)
+Gitignore content
+```
+_site
+.jekyll-cache
+```
+
+## Running the thing
+
+```bash
+jekyll serve --livereload
+```

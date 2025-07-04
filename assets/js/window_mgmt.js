@@ -1,4 +1,136 @@
-document.body.addEventListener('click', function (event) {
+// By: Me (Online)
+// Purpose: Change time on the bottom right
+// Source: https://stackoverflow.com/questions/8888491/how-do-you-display-javascript-datetime-in-12-hour-am-pm-format
+
+setInterval(function () {
+	var time = formatAMPM(new Date);
+	var clock = document.getElementById('tray-clock');
+	clock.innerHTML = time;
+}, 1000);
+
+function formatAMPM(date) {
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var ampm = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+  minutes = minutes < 10 ? '0'+minutes : minutes;
+  var strTime = hours + ':' + minutes + ' ' + ampm;
+  return strTime;
+}
+
+
+// By: Me (AI Custom)
+// Purpose: Dragging around anny div with the .draggable calss (Whcih is every windows)
+let highestZIndex = 10;
+
+let activeElement = null;
+let startX = 0, startY = 0;
+let currentX = 0, currentY = 0;
+let xOffset = 0, yOffset = 0;
+
+document.body.addEventListener('mousedown', function (e) {
+	// Only allow drag for elements with the 'draggable' class
+	// 🟢 Bring to front
+	highestZIndex++;
+	ae = e.target.closest('.draggable');
+	ae.style.zIndex = highestZIndex;
+
+	if (e.target.closest('.draggable') && e.target.id.endsWith("-bar")) {
+		activeElement = e.target.closest('.draggable');
+		// Read existing transform values if any
+		const transform = activeElement.style.transform;
+		const match = /translate\((-?\d+)px,\s*(-?\d+)px\)/.exec(transform);
+		xOffset = match ? parseInt(match[1]) : 0;
+		yOffset = match ? parseInt(match[2]) : 0;
+
+		startX = e.clientX - xOffset;
+		startY = e.clientY - yOffset;
+
+		document.addEventListener('mousemove', mouseMove);
+		document.addEventListener('mouseup', mouseUp);
+	}
+});
+
+function mouseMove(e) {
+	if (!activeElement) return;
+
+	currentX = e.clientX - startX;
+	currentY = e.clientY - startY;
+
+	xOffset = currentX;
+	yOffset = currentY;
+
+	activeElement.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+}
+
+function mouseUp() {
+	document.removeEventListener('mousemove', mouseMove);
+	document.removeEventListener('mouseup', mouseUp);
+	activeElement = null;
+}
+
+
+
+// By: Me (Custom)
+// Purpose: When bottom left edge or the bar of post-content is double clicked, it will restore it to original size
+let lastClick = 0;
+let clickCount = 0;
+
+function handleDoubleClickReset(e, fromBox = false) {
+	
+	const now = Date.now();
+	const target = e.currentTarget || e.target;
+
+	// Get the related draggable box
+	const box = target.closest('.draggable');
+	if (!box) return;
+
+	// If checking from the box, only trigger if near bottom-left corner
+	if (fromBox) {
+		const rect = box.getBoundingClientRect();
+		const edgeMargin = 20;
+		const nearCorner = e.clientX < rect.left + edgeMargin && e.clientY > rect.bottom - edgeMargin;
+		if (!nearCorner) return;
+	}
+
+	if (now - lastClick < 500) {
+
+		clickCount++;
+		if (clickCount === 2) {
+			box.style.transform = 'translate(0px, 0px)';
+			box.removeAttribute('style');
+
+			// Reset offsets if you're using global drag vars
+			xOffset = 0;
+			yOffset = 0;
+			currentX = 0;
+			currentY = 0;
+
+			clickCount = 0;
+			return;
+		}
+	} else {
+		clickCount = 1;
+	}
+
+	lastClick = now;
+}
+
+// Want to disable this for now
+// document.querySelectorAll('.draggable').forEach(bar => {
+// 	bar.addEventListener('mousedown', e => handleDoubleClickReset(e, true));
+// });
+
+document.querySelectorAll('.resetable').forEach(bar => {	
+	bar.addEventListener('mousedown', (e) => handleDoubleClickReset(e));
+});
+
+
+
+// By: Me (Custom)
+// Purpose: Changes the colour of the window's top bar when clicked at appropriate window
+document.body.addEventListener('mousedown', function (event) {
     const clickedInNav = event.target.closest('#nav-box');
     const clickedInPost = event.target.closest('#post-box');
     const clickedInPopup = event.target.closest('#neko-popup');
@@ -19,6 +151,7 @@ document.body.addEventListener('click', function (event) {
 });
 
 // By: Me (Custom)
+// Purpose: Makes the top right button function for the navigation section do something. For this, it will "minimize" and "maximize"
 var nav_max = document.getElementById("nav-maximize");
 var nav_min = document.getElementById("nav-minimize");
 

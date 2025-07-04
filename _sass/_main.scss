@@ -1,3 +1,5 @@
+
+
 body {
 	background: #008082;
 	font-family: sans-serif, serif, monospace;
@@ -12,6 +14,20 @@ body {
 	border: 2px solid;
 	border-color: #fff8ff #000000 #000000 #fff8ff;
 	padding: 2px 0;
+}
+
+.draggable {
+	position: relative;
+	z-index: 1;
+	transition: box-shadow 0.2s ease;
+}
+
+#post-box{
+	display:flex;
+	flex-direction: column;
+	resize: both;
+	overflow: hidden;
+	height: 600px;
 }
 
 .popup{
@@ -121,12 +137,14 @@ ul.topbar {
 		color: #000000;
 	}
 }
+
 .post_list, .tag_list, .post_content {
 	background: #fff8ff;
 	border-width: 2px;
 	border-style: ridge groove groove ridge;
 	border-color: #7f787f #fff8ff #fff8ff #7f787f;
 }
+
 .post_list {
 	width: 70.2%;
 	margin: 0 auto;
@@ -204,6 +222,7 @@ ul.topbar {
     margin:4px 0 4px 13px;
     padding:0 0 0 20px;
 }
+
 .post_total {
 	display: flex;
 	justify-content: space-between;
@@ -225,13 +244,15 @@ ul.topbar {
 		margin-right: 2px;
 	}
 }
+
 .post_content {
 	position: relative;
 	width: 98.5%;
-	min-height: 600px;
-	max-height: 600px;
+	height: 98.5%;
+	max-height: 99%;
+	box-sizing: border-box;
 	padding: 2px;
-	margin: 0 auto;
+	margin: auto auto;
 	overflow-y: auto;
 	overflow-x: auto;
 
@@ -435,3 +456,63 @@ ul.topbar {
 ::-webkit-scrollbar-corner {
 	background-color: #cacaca;
 } /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
+
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: #bfb8bf;
+  border-top: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+//   box-shadow: inset 0 1px #808080;
+}
+
+.start-button {
+  background: linear-gradient(to bottom, #3a6ea5, #265a88);
+  color: white;
+  border: 2px outset #fff;
+  padding: 2px 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.taskbar-items {
+  display: flex;
+  flex-grow: 1;
+  gap: 2px;
+  margin-left: 4px;
+}
+
+.task-item {
+  background: #ece9d8;
+  border: 2px outset #fff;
+  padding: 2px 6px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.task-item img {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+.task-item.active {
+  border: 2px inset #ccc;
+  background: #d4d0c8;
+}
+
+.system-tray {
+  margin-left: auto;
+  margin-right: 8px;
+  font-size: 12px;
+}
